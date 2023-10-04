@@ -47,5 +47,3 @@ sequelize.sync({ force: false }).then(() => {
 
   app.listen(PORT, () => console.log(message));
 });
-
-//Test 1
