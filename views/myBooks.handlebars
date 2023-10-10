@@ -1,0 +1,24 @@
+{{! Renders the books that are saved to table, MyBooks }}
+MY BOOKS
+<div id="myBooks" style="display: flex; flex-wrap: wrap;">
+  {{#each myBooks}}
+    <div class="card" style="width: 18rem;">
+      <img
+        src={{src}}
+        class="card-img-top"
+        alt="..."
+        style="height: 220px; width: 170px;"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Title: {{title}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Rating: {{rating}}</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  {{/each}}
+</div>

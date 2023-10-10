@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const testData = require("../seeds/testingData_myBooks");
+const { MyBooks } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Prevent non logged in users from viewing the homepage
@@ -13,6 +14,20 @@ router.get("/", withAuth, async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.get("/mybooks", async (req, res) => {
+  try {
+    const myBooksData = await MyBooks.findAll();
+    const myBooks = myBooksData.map((book) => book.get({ plain: true }));
+    console.log("myBooks Array:", myBooks);
+
+    res.render("myBooks", {
+      myBooks: myBooks,
+    });
+  } catch (error) {
+    res.status(400).json(error);
   }
 });
 

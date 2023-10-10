@@ -8,3 +8,25 @@
   {{> carousel testData=testData }}
 </div>
 </div>
+
+ </header>
+  {{> navbar }}
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+    <div class ="container">
+      <div class="card-columns d-flex justify-content-center">
+        <div class ="card">
+          <div class="card-block">
+            <h3 class="card-itle">Search:</h3>
+              <p class="card-text">Search for your favorite book, author, or genre here!</p>
+              <input type="text">
+          </div>
+        </div>
+        <div class ="card">
+          <div class="card-block">
+            <h3 class="card-itle">Featured Books</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
