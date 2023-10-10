@@ -3,4 +3,8 @@
     <h2>Logged in as {{user.name}}</h2>
     <p>{{user.email}}</p>
   </div>
+  {{!-- We can move this somewhere else if its needed. --}}
+  <div id="carousel-container">
+  {{> carousel testData=testData }}
+</div>
 </div>
