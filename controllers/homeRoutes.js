@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const testData = require("../seeds/testingData_myBooks");
 const { MyBooks } = require("../models");
-const withAuth = require("../utils/auth");
+// const withAuth = require("../utils/auth");
 
-// Prevent non logged in users from viewing the homepage
-router.get("/", withAuth, async (req, res) => {
+// Prevent non logged in users from viewing the homepage: Removed 'withAuth, ' for testing.
+router.get("/", async (req, res) => {
   try {
     res.render("homepage", {
       user: req.session.user,
