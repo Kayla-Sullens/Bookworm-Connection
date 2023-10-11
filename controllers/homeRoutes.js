@@ -32,6 +32,36 @@ router.get("/mybooks", async (req, res) => {
   }
 });
 
+router.get("/myreviews", async (req, res) => {
+  try {
+    // SHOULD be changed to 'myReviewsData' when Model, and Seed page are built.
+    const myBooksData = await MyBooks.findAll();
+    const myBooks = myBooksData.map((book) => book.get({ plain: true }));
+    console.log("myReviews Array:", myBooks);
+
+    res.render("myReviews", {
+      myBooks: myBooks,
+    });
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
+router.get("/myrecommendations", async (req, res) => {
+  try {
+    // SHOULD be changed to 'myRecommendationsData' when Model, and Seed page are built.
+    const myBooksData = await MyBooks.findAll();
+    const myBooks = myBooksData.map((book) => book.get({ plain: true }));
+    console.log("myReviews Array:", myBooks);
+
+    res.render("myRecommendations", {
+      myBooks: myBooks,
+    });
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
 router.get("/login", (req, res) => {
   // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {

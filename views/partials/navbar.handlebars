@@ -1,26 +1,44 @@
 <!-- Example single danger button -->
 <nav id="navbar">
   <div class="btn-group">
-    <button type="button" class="btn btn-danger">
+    <button type="button" id="myBooksBtn" class="btn btn-danger">
       My Books
     </button>
   </div>
   <div class="btn-group">
-    <button type="button" class="btn btn-danger">
+    <button type="button" id="myReviewsBtn" class="btn btn-danger">
       My Reviews
     </button>
   </div>
   <div class="btn-group">
-    <button type="button" class="btn btn-danger">
+    <button type="button" id="myRecommendBtn" class="btn btn-danger">
       My Recommendations
     </button>
   </div>
-  <div class='btn-group'>
-    {{#if true}}{{! logged_in. Right now, it always acts like its logged in. }}
-      <span id='log-user'>Logged in as: Temp User {{user.name}}</span>
-      <button id='logout' type='button' class='btn btn-danger'>Logout</button>
+  <div> NAVBAR PAGE </div>
+  <div class="btn-group">
+    {{#if true}}{{! logged_in }}
+      <span id="log-user">Logged in as: Temp User {{user.name}}</span>
+      <button id="logout" type="button" class="btn btn-danger">Logout</button>
     {{else}}
-      <a href='login'>Login</a>
+      <a href="login">Login</a>
     {{/if}}
   </div>
 </nav>
+
+{{! To do: 
+- Need script file. Script file should use jquery to hold the functions to switch endpoints:
+- When MVC is done, move script to the public folder.
+}}
+{{! <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> }}
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"
+></script>
+<script>
+  $(document).ready(function () { $("#myBooksBtn").click(function () {
+  window.location.href = '/mybooks'; }); $("#myReviewsBtn").click(function () {
+  window.location.href = '/myreviews'; }); $("#myRecommendBtn").click(function
+  () { window.location.href = '/myrecommendations'; }); });
+</script>
