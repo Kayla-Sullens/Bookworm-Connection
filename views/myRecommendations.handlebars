@@ -1,0 +1,19 @@
+MY RECOMMENDATIONS
+<div id="myRecommendations" style="display: flex; flex-wrap: wrap;">
+  {{#each myRecommendations}}
+    <div class="card" style="width: 18rem;">
+        <img
+        src={{src}}
+        class="card-img-top"
+        alt="..."
+        style="height: 220px; width: 170px;"
+      />
+      <div class="card-body">
+        <h4 class="card-title">Title: {{title}}</h5>
+      </div>
+      <div class="card-body">
+        <h5 class="card-review">Recommended because: {{recommendations}}</h5>
+      </div>
+    </div>
+  {{/each}}
+</div>

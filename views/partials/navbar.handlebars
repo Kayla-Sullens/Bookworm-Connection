@@ -1,0 +1,26 @@
+<!-- Example single danger button -->
+<nav id='navbar'>
+  <div class='btn-group'>
+    <button type='button' class='btn btn-danger'>
+      My Books
+    </button>
+  </div>
+  <div class='btn-group'>
+    <button type='button' class='btn btn-danger'>
+      My Reviews
+    </button>
+  </div>
+  <div class='btn-group'>
+    <button type='button' class='btn btn-danger'>
+      My Recommendations
+    </button>
+  </div>
+  <div class='btn-group'>
+    {{#if true}}{{! logged_in. Right now, it always acts like its logged in. }}
+      <span id='log-user'>Logged in as: Temp User {{user.name}}</span>
+      <button id='logout' type='button' class='btn btn-danger'>Logout</button>
+    {{else}}
+      <a href='login'>Login</a>
+    {{/if}}
+  </div>
+</nav>
