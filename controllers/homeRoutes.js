@@ -17,6 +17,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// works
 router.get("/mybooks", async (req, res) => {
   try {
     const myBooksData = await MyBooks.findAll();
