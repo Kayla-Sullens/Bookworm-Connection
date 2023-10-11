@@ -1,28 +1,17 @@
-// we have to save books to db first.
-// save the book if not in myBooks table
-// when clicking on save book you are linknig to user.
-// refrence many to many relationship like in last module.
-
 const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection");
 
-class MyBooks extends Model {}
+class Featured extends Model {}
 
-MyBooks.init(
+//     only need id bc everything else can be joined.
+Featured.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
     },
     book_id: {
       type: DataTypes.INTEGER,
@@ -37,8 +26,11 @@ MyBooks.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "mybooks",
+    modelName: "featured",
   }
 );
 
-module.exports = MyBooks;
+module.exports = Featured;
+
+//  need to combine tables.
+// Join with the book_id refrence we can pull out the other tables info too.
