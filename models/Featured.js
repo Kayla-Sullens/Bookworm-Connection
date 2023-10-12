@@ -13,13 +13,7 @@ Featured.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    book_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "books",
-        key: "id",
-      },
-    },
+    // might need additional column
   },
   {
     sequelize,
