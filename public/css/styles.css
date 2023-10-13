@@ -43,6 +43,12 @@ nav {
       margin-left:auto;
 }
 
+.card {
+      width: 3600px;
+      padding: 20px;
+      border: 2px solid #3b3030;
+    }
+
 Footer {
 background-color: #e64c66;
 color: #fff;
