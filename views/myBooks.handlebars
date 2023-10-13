@@ -1,5 +1,9 @@
 {{! Renders the books that are saved to table, MyBooks }}
+{{> navbar }}
 MY BOOKS
+{{!-- {{myBooks.0}}
+{{myBooks.0.id}}
+{{myBooks.0.src}} --}}
 <div id="myBooks" style="display: flex; flex-wrap: wrap;">
   {{#each myBooks}}
     <div class="card" style="width: 18rem;">
@@ -23,5 +27,5 @@ MY BOOKS
   {{/each}}
 </div>
 
-{{> footer}}
+
 
