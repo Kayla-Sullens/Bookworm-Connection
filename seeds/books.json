@@ -1,0 +1,74 @@
+[
+    {
+        "title": "A Christmas Carol",
+        "isbn": 9781774818039,
+        "rating": 4.2,
+        "src": "https://pictures.abebooks.com/isbn/9781774818039-us.jpg"
+    },
+    {
+        "title": "All the Bright Places",
+        "isbn": 9780385755917,
+        "rating": 5,
+        "src": "https://images.isbndb.com/covers/59/17/9780385755917.jpg"
+    },
+    {
+        "title": "Along for the Ride",
+        "isbn": 9780142415566,
+        "rating": 4.6,
+        "src": "https://images.isbndb.com/covers/55/66/9780142415566.jpg"
+    },
+    {
+        "title": "Animal Farm",
+        "isbn": 9780451526342,
+        "rating": 4.2,
+        "src": "https://images.isbndb.com/covers/63/42/9780451526342.jpg"
+    },
+    {
+        "title": "Anne Frank: Beyond the Diary - A Photographic Remembrance",
+        "isbn": 9780670849321 ,
+        "rating": 4.28,
+        "src": "https://images.isbndb.com/covers/93/21/9780670849321.jpg"
+    },
+    {
+        "title": "Beartown",
+        "isbn": 9781501160776,
+        "rating": 4.3,
+        "src": "https://images.isbndb.com/covers/07/76/9781501160776.jpg"
+    },
+    {
+        "title": "Before It's Too Late",
+        "isbn": 9781910394618,
+        "rating": 4.4,
+        "src": "https://images.isbndb.com/covers/46/18/9781910394618.jpg"
+    },
+    {
+        "title": "Before She Disappeared",
+        "isbn": 9781524745073,
+        "rating": 4.4,
+        "src": "https://images.isbndb.com/covers/50/73/9781524745073.jpg"
+    },
+    {
+        "title": "Beside Myself",
+        "isbn": 9781632864352,
+        "rating": 4.4,
+        "src": "https://images.isbndb.com/covers/43/52/9781632864352.jpg"
+    },
+    {
+        "title": "Block 46",
+        "isbn": 9781910633700,
+        "rating": 4.8,
+        "src": "https://images.isbndb.com/covers/37/00/9781910633700.jpg"
+    },
+    {
+        "title": "Blackberry and Wild Rose",
+        "isbn": 9781094091112,
+        "rating": 4.5,
+        "src": "https://images.isbndb.com/covers/11/12/9781094091112.jpg"
+    },
+    {
+        "title": "The Diary of a Young Girl",
+        "isbn": 9780385480338,
+        "rating": 4.3,
+        "src": "https://images.isbndb.com/covers/03/38/9780385480338.jpg"
+    }
+]

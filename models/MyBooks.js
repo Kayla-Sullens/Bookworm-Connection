@@ -36,7 +36,7 @@ MyBooks.init(
       allowNull: false,
     },
     isbn: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DOUBLE,
       allowNull: false,
     },
     rating: {
