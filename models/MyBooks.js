@@ -31,6 +31,22 @@ MyBooks.init(
         key: "id",
       },
     },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    isbn: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    rating: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    src: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,
@@ -42,3 +58,13 @@ MyBooks.init(
 );
 
 module.exports = MyBooks;
+
+/* Questions: 
+- If MyBook model gets seeded from testingData_myBooks.json file
+  using bulkCreate() function, dont we need more properties like 
+  the ones that are in the json file?
+
+
+
+
+*/
