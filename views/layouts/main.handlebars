@@ -10,8 +10,9 @@
   <title>Bookworm Connection</title>
 </head>
 
+
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
+  <header id="header" class="display-flex justify-space-between align-center p-2">
     <h1>
       Bookworm Connection
     </h1>
@@ -26,6 +27,7 @@
     </div>
   </header>
   <main class="container container-fluid mt-5">
+
     {{#if logged_in}}
     {{> navbar }}
     {{/if}}
