@@ -1,56 +1,57 @@
-<!-- Example single danger button -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-      <div class="btn-group">
-        <a href="/mybooks">
-          <button type="button" id="myBooksBtn" class="btn btn-danger">
-            My Books
-          </button>
-        </a>
-      </div>
-      <div class="btn-group">
-        <a href="/myreviews">
-          <button type="button" id="myReviewsBtn" class="btn btn-danger">
-            My Reviews
-          </button>
-        </a>
-      </div>
-      <div class="btn-group">
-        <a href="/myrecommendations">
-          <button type="button" id="myRecommendBtn" class="btn btn-danger">
-            My Recommendations
-          </button>
-        </a>
-      </div>
-      <div> NAVBAR PAGE </div>
-      <div class="btn-group">
-        {{#if true}}{{! logged_in }}
-        <span id="log-user">Logged in as: Temp User {{user.name}}</span>
-        <button id="logout" type="button" class="btn btn-danger">Logout</button>
-        {{else}}
-        <a href="login">Login</a>
-        {{/if}}
-      </div>
-    </nav>
 
-    {{! To do:
-    - Need script file. Script file should use jquery to hold the functions to switch endpoints:
-    - When MVC is done, move script to the public folder.
-    }}
-    {{!
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> }}
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script>
-      $(document).ready(function () {
-        $("#myBooksBtn").click(function () {
-          window.location.href = '/mybooks';
-        }); $("#myReviewsBtn").click(function () {
-          window.location.href = '/myreviews';
-        }); $("#myRecommendBtn").click(function
-          () { window.location.href = '/myrecommendations'; });
-      });
-    </script>
+<nav id="navbar">
+  <div class="btn-group">
+    <a href="/">
+      <button type="button" id="homeBtn" class="btn btn-danger">
+        Home
+      </button>
+    </a>
+  </div>
+  <div>
+    <a href="/mybooks">
+      <button type="button" id="myBooksBtn" class="btn btn-danger">
+        My Books
+      </button>
+    </a>
+  </div>
+  <div class="btn-group">
+    <a href="/myreviews">
+      <button type="button" id="myReviewsBtn" class="btn btn-danger">
+        My Reviews
+      </button>
+    </a>
+  </div>
+  <div class="btn-group">
+    <a href="/myrecommendations">
+      <button type="button" id="myRecommendBtn" class="btn btn-danger">
+        My Recommendations
+      </button>
+    </a>
+  </div>
+
+  <div class="btn-group">
+    {{#if logged_in}}
+      {{! <button class="btn btn-danger" id="logout">Logout</button> }}
+      <a class="btn btn-danger" id="logout">Logout</a>
+    {{else}}
+      <a href="/login">Login</a>
+    {{/if}}
+  </div>
+</nav>
+
+{{! To do:
+- Need script file. Script file should use jquery to hold the functions to switch endpoints:
+- When MVC is done, move script to the public folder.
+}}
+{{!
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> }}
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"
+></script>
+
+{{! BUGS: 
+- Why dont the mybooks, myreviews, and myrecommendations show the logout btn?
+ }}
+

@@ -1,16 +1,16 @@
 [
   {
-    "name": "First User",
-    "email": "firstuser@bootcamp.com",
-    "password": "password12345!"
+    "username": "Sal",
+    "email": "sal@gmail.com",
+    "password": "password1"
   },
   {
-    "name": "Second User",
+    "username": "Second User",
     "email": "seconduser@bootcamp.com",
     "password": "password12345!"
   },
   {
-    "name": "Third User",
+    "username": "Third User",
     "email": "thirduser@bootcamp.com",
     "password": "password12345!"
   }

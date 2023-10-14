@@ -1,8 +1,10 @@
 const sequelize = require("../config/connection");
-const { User, MyBooks } = require("../models");
+const { User, Books, Reviews, UserBooks } = require("../models");
 
 const userData = require("./userData.json");
-const testingData_myBooks = require("./books.json");
+const booksData = require("./booksData.json");
+const reviewsData = require("./reviewsData.json");
+const user_booksData = require("./user_booksData.json");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -11,15 +13,18 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-  await MyBooks.bulkCreate(testingData_myBooks, {
+  await Books.bulkCreate(booksData, {
     individualHooks: true,
     returning: true,
   });
-  // await MyReviews.bulkCreate(reviewsData, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-  
+  await Reviews.bulkCreate(reviewsData, {
+    individualHooks: true,
+    returning: true,
+  });
+  await UserBooks.bulkCreate(user_booksData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   process.exit(0);
 };

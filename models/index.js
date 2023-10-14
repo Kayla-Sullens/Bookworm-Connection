@@ -1,21 +1,33 @@
 const User = require("./User");
 const Books = require("./Books");
-const MyBooks = require("./MyBooks");
-const Featured = require("./Featured");
+// const MyBooks = require("./MyBooks");
+const UserBooks = require("./UserBook");
+const Reviews = require("./Reviews");
 
-// User.hasMany(Books, {
-//   foreignKey: "id",
-//   onDelete: "CASCADE",
-// });
+User.hasMany(Reviews, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+Reviews.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+//
+// Join Tables
+User.belongsToMany(Books, {
+  through: UserBooks,
+  unique: false, // added
+  foreignKey: "user_id",
+});
+Books.belongsToMany(User, {
+  through: UserBooks,
+  unique: false, // added
+  foreignKey: "book_id",
+});
+UserBooks.belongsTo(Books, {
+  foreignKey: "book_id",
+  targetKey: "id",
+});
 
-// Books.belongsTo(User, {
-//   foreignKey: "id",
-// }); rel being handled 18-19
-
-// define Feature too manytomany.
-
-User.belongsToMany(Books, { through: Featured });
-Books.belongsToMany(User, { through: Featured });
-// this is creating a true third table 'Featured'
-
-module.exports = { User, MyBooks, Books, Featured };
+module.exports = { User, Books, Reviews, UserBooks };
+// UserBooks dont need

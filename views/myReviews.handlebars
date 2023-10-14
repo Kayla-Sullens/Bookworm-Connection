@@ -1,81 +1,77 @@
 {{> navbar }}
 MY REVIEWS
-<div id="myReviews">
-  <form action="/api/reviews" method="post">
-    <div class="form-group">
-      <label for="formGroupExampleInput">Product</label>
-      <input type="text" name="product" class="form-control" id="formGroupExampleInput" placeholder="Product">
-    </div>
-    <div class="form-group">
-      <label for="formGroupExampleInput2">Review</label>
-      <input type="text" name="review" class="form-control" id="formGroupExampleInput2" placeholder="Review">
-    </div>
-    <div class="form-group">
-      <label for="formGroupExampleInput2">Username</label>
-      <input type="text" name="username" class="form-control" id="formGroupExampleInput2" placeholder="Username">
-    </div>
-    <input class="btn btn-primary" type="submit" />
-  </form>
 
-
-  {{#each myReviews}}
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h4 class="card-title">Book: {{title}}</h5>
-    </div>
-    <div class="card-body">
-      <h5 class="card-rating">Rating: {{rating}}</h5>
-    </div>
-    <div class="card-body">
-      <h5 class="card-review">Review: {{review}}</h5>
-    </div>
+<div id="myReviews" class="row">
+  <div class="col-md-6">
+    <form id="review-form">
+      <div class="form-group">
+        <label for="title">Review Title</label>
+        <input type="text" name="title" class="form-control" id="review-title" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="review">Review Body</label>
+        <input type="text" name="review" class="form-control" id="review-body" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control" id="review-username" placeholder="">
+      </div>
+      <input class="btn btn-primary" type="submit" />
+    </form>
   </div>
-  {{/each}}
+  <div class="col-md-6">
+    {{#each myReviews}}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h4 class="card-title">Book Title: {{title}}</h5>
+      </div>
+      <div class="card-body">
+        <h5 class="card-rating">By: {{user.username}}</h5>
+      </div>
+      <div class="card-body">
+        <h5 class="card-review">Stars: *Need to add stars to Model*{{id}}</h5>
+      </div>
+      <div class="card-body">
+        <h5 class="card-review">Review: {{review}}</h5>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
 </div>
 
-{{!-- <script>
-  const userNameInput = document.getElementById('username');
-  const productInput = document.getElementById('product');
-  const reviewInput = document.getElementById('review');
-  const reviewForm = document.getElementById('review-form');
+<script src="../js/reviews.js"></script>
+{{!-- <script> // THIS CODE WAS COPIED FROM "../js/reviews.js" JUST TO SEE THE CODE. DELETE WHEN DONE.
+// File for POSTING, DELETING and Editing if we get to it.
+console.log("Reviews.jssafsdfasd");
 
-  // TODO: Add a comment explaining the functionality of this helper function
-  const postReview = (review) =>
-    // TODO: Add a comment explaining what sort of data we need to provide when invoking the fetch function for a POST request
-    fetch('/api/reviews', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      // TODO: Add a comment describing why one would need to convert the JSON object to a string in this instance
-      body: JSON.stringify(review),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log('Successful POST request:', data);
-        return data;
-      })
-      // TODO: Add a comment describing the functionality of the catch statement
-      .catch((error) => {
-        console.error('Error in POST request:', error);
-      });
+const reviewsFormHandler = async (event) => {
+  event.preventDefault();
 
-  // Listen for when the form is submitted
-  {
-    reviewForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+ Collect values from the login form
+  const title = document.querySelector("#review-title").value.trim(); // trims off white space from the begining and end
+  const review = document.querySelector("#review-body").value.trim();
+  // const user_id= document.querySelector("#review-username").value.trim();
+  const user_id = 1;
 
-      // Create a new review object from the input values
-      const newReview = {
-        username: userNameInput.value.trim(),
-        product: productInput.value.trim(),
-        review: reviewInput.value.trim(),
-      };
-
-      // Call our `postReview` method to make a POST request with our `newReview` object.
-      postReview(newReview)
-        .then((data) => alert(`Review added! Review ID: ${data.body.review_id}`))
-        .catch((err) => console.error(err));
+  if (title && review && user_id) {
+    // Send a POST request to the API endpoint
+    const response = await fetch("/api/reviews", {
+      method: "POST",
+      body: JSON.stringify({ title, review, user_id }),
+      headers: { "Content-Type": "application/json" },
     });
+
+    if (response.ok) {
+      // If successful, redirect the browser to the reviews page
+      document.location.replace("/reviews");
+    } else {
+      alert(response.statusText);
+    }
   }
-</script> --}}
+};
+
+document
+  .querySelector("#review-form")
+  .addEventListener("submit", reviewsFormHandler);
+</script>  --}}
