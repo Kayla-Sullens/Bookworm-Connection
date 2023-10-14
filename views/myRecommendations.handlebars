@@ -1,7 +1,7 @@
 {{> navbar }}
 MY RECOMMENDATIONS
 <div id="myRecommendations" style="display: flex; flex-wrap: wrap;">
-  <form action="/api/recommendations" method="post">
+  <form > {{!-- action="/api/recommendations" method="post" --}}
     <div class="form-group">
       <label for="formGroupTitle">Title</label>
       <input type="text" name="title" class="form-control" id="formGroupTitle" placeholder="Title">
@@ -13,19 +13,19 @@ MY RECOMMENDATIONS
     <input class="btn btn-primary" type="submit" />
   </form>
 
-  {{#each myRecommendations}}
+  {{#each myBooks}}
     <div class="card" style="width: 18rem;">
         <img
-        src={{src}}
+        src={{book.src}}
         class="card-img-top"
         alt="..."
         style="height: 220px; width: 170px;"
       />
       <div class="card-body">
-        <h4 class="card-title">Title: {{title}}</h5>
+        <h4 class="card-title">Title: {{book.title}}</h5>
       </div>
       <div class="card-body">
-        <h5 class="card-review">Recommended because: {{recommendations}}</h5>
+        <h5 class="card-review">Recommended because has a : {{book.rating}} star rating.</h5>
       </div>
     </div>
   {{/each}}

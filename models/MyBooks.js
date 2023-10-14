@@ -1,7 +1,4 @@
-// we have to save books to db first.
-// save the book if not in myBooks table
-// when clicking on save book you are linknig to user.
-// refrence many to many relationship like in last module.
+// MIGHT NOT NEED THIS MODELS SINCE UserBooks.js HAS THE SAME INFO....
 
 const { Model, DataTypes } = require("sequelize");
 
@@ -60,7 +57,7 @@ MyBooks.init(
 module.exports = MyBooks;
 
 /* Questions: 
-- If MyBook model gets seeded from testingData_myBooks.json file
+- If MyBook model gets seeded from user_booksData.json file
   using bulkCreate() function, dont we need more properties like 
   the ones that are in the json file?
 

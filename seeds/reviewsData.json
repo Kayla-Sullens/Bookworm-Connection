@@ -1,17 +1,17 @@
 [
     {
-        "title": "test",
+        "title": "The best",
         "review": "test",
-        "rating": 5
+        "user_id": 1
     },
     {
-        "title": "test1",
+        "title": "It was ok.",
         "review": "test1",
-        "rating": 5
+        "user_id": 2
     },
     {
-        "title": "test2",
+        "title": "Great Read",
         "review": "test2",
-        "rating": 5
+        "user_id": 3
     }
 ]
