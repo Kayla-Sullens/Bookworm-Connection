@@ -17,7 +17,7 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-//  WORKING...
+//WORKING...
 router.get("/mybooks", withAuth, async (req, res) => {
   try {
     const myBooksData = await UserBooks.findAll({
@@ -37,6 +37,7 @@ router.get("/mybooks", withAuth, async (req, res) => {
 
     res.render("myBooks", {
       myBooks: myBooks,
+      logged_in: req.session.logged_in,
     });
   } catch (error) {
     res.status(400).json(error);
@@ -64,12 +65,13 @@ router.get("/myreviews", withAuth, async (req, res) => {
     // res.json(myReviews);
     res.render("myReviews", {
       myReviews,
+      logged_in: req.session.logged_in,
     });
   } catch (error) {
     res.status(400).json(error);
   }
 });
-
+// Working...
 router.get("/myrecommendations", withAuth, async (req, res) => {
   try {
     // using 'UserBooks' just to get some data. Need to filter later with recommend = true property.
@@ -87,6 +89,7 @@ router.get("/myrecommendations", withAuth, async (req, res) => {
 
     res.render("myRecommendations", {
       myBooks: myBooks,
+      logged_in: req.session.logged_in,
     });
   } catch (error) {
     res.status(400).json(error);
