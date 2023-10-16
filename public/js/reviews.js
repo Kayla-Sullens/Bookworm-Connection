@@ -1,5 +1,5 @@
 // File for POSTING, DELETING and Editing if we get to it.
-console.log("Reviews.jssafsdfasd");
+console.log("Reviews.js 1");
 
 const reviewsFormHandler = async (event) => {
   event.preventDefault();
@@ -7,9 +7,9 @@ const reviewsFormHandler = async (event) => {
   // Collect values from the login form
   const title = document.querySelector("#review-title").value.trim(); // trims off white space from the begining and end
   const review = document.querySelector("#review-body").value.trim();
-  const user_id= document.querySelector("#review-username").value.trim();
-  // const user_id = 1;
-
+  const user_id = document.querySelector("#review-id").value.trim();
+  // const user_id = 2;
+  console.log(JSON.stringify({ title, review, user_id }));
   if (title && review && user_id) {
     // Send a POST request to the API endpoint
     const response = await fetch("/api/reviews", {

@@ -55,6 +55,7 @@ router.get("/myreviews", withAuth, async (req, res) => {
           // attributes: ["username"], // Need username, otherwise all info including password gets passed.
         },
       ],
+      order: [["id", "DESC"]],
     });
     const myReviews = myReviewsData.map((review) =>
       review.get({ plain: true })
