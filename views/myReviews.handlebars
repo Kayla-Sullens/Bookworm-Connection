@@ -4,6 +4,7 @@ MY REVIEWS
 <div id="myReviews" class="row">
   <div class="col-md-6">
     <form id="review-form">
+      {{!-- this will set up the format in which users are prompted to put their reviews --}}
       <div class="form-group">
         <label for="title">Review Title</label>
         <input type="text" name="title" class="form-control" id="review-title" placeholder="">
@@ -21,6 +22,7 @@ MY REVIEWS
   </div>
   <div class="col-md-6">
     {{#each myReviews}}
+    {{!-- this will format display format for the users review --}}
     <div class="card" style="width: 55rem; height: 15rem">
       <div class="card-body">
         <h4 class="card-title">Book Title: {{title}}</h5>
