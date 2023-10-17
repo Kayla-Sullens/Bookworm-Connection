@@ -1,20 +1,20 @@
 {{> navbar }}
 MY REVIEWS
 <div id="myReviews">
-  <form action="/api/reviews" method="post">
+  <form>
     <div class="form-group">
-      <label for="formGroupExampleInput">Product</label>
-      <input type="text" name="product" class="form-control" id="formGroupExampleInput" placeholder="Product">
+      <label for="formGroupExampleInput">Title</label>
+      <input type="text" name="title" class="form-control" id="title" placeholder="Title">
     </div>
     <div class="form-group">
       <label for="formGroupExampleInput2">Review</label>
-      <input type="text" name="review" class="form-control" id="formGroupExampleInput2" placeholder="Review">
+      <input type="text" name="review" class="form-control" id="reviewBody" placeholder="Review">
     </div>
     <div class="form-group">
       <label for="formGroupExampleInput2">Username</label>
-      <input type="text" name="username" class="form-control" id="formGroupExampleInput2" placeholder="Username">
+      <input type="text" name="username" class="form-control" id="userName" placeholder="Username">
     </div>
-    <input class="btn btn-primary" type="submit" />
+    <input class="btn btn-primary" id="postReview" type="submit" />
   </form>
 
 
@@ -32,6 +32,7 @@ MY REVIEWS
   </div>
   {{/each}}
 </div>
+<script src="../js/reviews.js"></script>
 
 {{!-- <script>
   const userNameInput = document.getElementById('username');

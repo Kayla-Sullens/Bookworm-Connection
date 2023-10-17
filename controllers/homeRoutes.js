@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const testData = require("../seeds/testingData_myBooks");
-const { MyBooks } = require("../models");
+const { MyBooks, Reviews } = require("../models");
 // const withAuth = require("../utils/auth");
 
 // Prevent non logged in users from viewing the homepage: Removed 'withAuth, ' for testing.
@@ -35,12 +35,17 @@ router.get("/mybooks", async (req, res) => {
 router.get("/myreviews", async (req, res) => {
   try {
     // SHOULD be changed to 'myReviewsData' when Model, and Seed page are built.
-    const myBooksData = await MyBooks.findAll();
-    const myBooks = myBooksData.map((book) => book.get({ plain: true }));
-    console.log("myReviews Array:", myBooks);
+    console.log(req.session.id);
+    const myReviewsData = await Reviews.findAll({
+      where: {
+        user_id: 1
+      }
+    });
+    const myReviews = myReviewsData.map((book) => book.get({ plain: true }));
+    console.log("myReviews Array:", myReviews);
 
     res.render("myReviews", {
-      myBooks: myBooks,
+      myReviews
     });
   } catch (error) {
     res.status(400).json(error);
