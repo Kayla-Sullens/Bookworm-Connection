@@ -56,12 +56,4 @@ MyBooks.init(
 
 module.exports = MyBooks;
 
-/* Questions: 
-- If MyBook model gets seeded from user_booksData.json file
-  using bulkCreate() function, dont we need more properties like 
-  the ones that are in the json file?
 
-
-
-
-*/

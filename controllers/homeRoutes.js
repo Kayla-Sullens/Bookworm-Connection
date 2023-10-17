@@ -24,9 +24,7 @@ router.get("/mybooks", withAuth, async (req, res) => {
       include: [
         {
           model: Books,
-          // through: UserBooks, // added after
-          // // as: "owned_books",
-          // attributes: ["username", "title", "src"], // added after.
+          
         },
       ],
     });
@@ -53,8 +51,7 @@ router.get("/myreviews", withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          // through: UserBooks,
-          // attributes: ["username"], // Need username, otherwise all info including password gets passed.
+          
         },
       ],
       order: [["id", "DESC"]],
@@ -82,8 +79,7 @@ router.get("/myrecommendations", withAuth, async (req, res) => {
       include: [
         {
           model: Books,
-          // through: UserBooks,
-          // attributes: ["username"], // Need username, otherwise all info including password gets passed.
+          
         },
       ],
     });

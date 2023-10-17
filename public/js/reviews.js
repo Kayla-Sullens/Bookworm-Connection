@@ -1,4 +1,3 @@
-// File for POSTING, DELETING and Editing if we get to it.
 console.log("Reviews.js 1");
 
 const reviewsFormHandler = async (event) => {
