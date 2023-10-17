@@ -6,15 +6,23 @@
       <form id="review-form">
         <div class="form-group">
           <label for="title">Review Title</label>
-          <input type="text" name="title" class="form-control" id="review-title" placeholder="">
+          <input type="text" name="title" class="form-control" id="review-title" placeholder="Review Title">
+        </div>
+         <div class="form-group">
+          <label for="bookTitle">Book Title</label>
+          <input type="text" name="bookTitle" class="form-control" id="book-title" placeholder="Book Title">
         </div>
         <div class="form-group">
-          <label for="review">Review Body</label>
-          <input type="text" name="review" class="form-control" id="review-body" placeholder="">
+          <label for="review">Review</label>
+          <input type="text" name="review" class="form-control" id="review-body" placeholder="Review">
         </div>
         <div class="form-group">
           <label for="userId">User ID</label>
-          <input type="text" name="userId" class="form-control" id="review-id" placeholder="">
+          <input type="text" name="userId" class="form-control" id="review-id" placeholder="User Id">
+        </div>
+         <div class="form-group">
+          <label for="rating">Rating</label>
+          <input type="text" name="rating" class="form-control" id="rating" placeholder="Rating">
         </div>
         <input class="btn btn-primary" type="submit" />
       </form>
@@ -22,7 +30,10 @@
     <div class="col-md-6">
       {{!-- will be the format for the users comments --}}
       {{#each myReviews}}
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 55rem; height: 17rem">
+        <div class="card-body">
+          <h4 class="card-title">Review Title: {{title}}</h5>
+        </div>
         <div class="card-body">
           <h4 class="card-title">Book Title: {{title}}</h5>
         </div>
@@ -30,7 +41,7 @@
           <h5 class="card-rating">By: {{user.username}}</h5>
         </div>
         <div class="card-body">
-          <h5 class="card-review">Stars: *Need to add stars to Model*{{id}}</h5>
+          <h5 class="card-review">Stars: {{rating}} out of 10</h5>
         </div>
         <div class="card-body">
           <h5 class="card-review">Review: {{review}}</h5>

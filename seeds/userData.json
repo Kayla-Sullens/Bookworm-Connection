@@ -5,13 +5,13 @@
     "password": "password1"
   },
   {
-    "username": "Second User",
-    "email": "seconduser@bootcamp.com",
-    "password": "password12345!"
+    "username": "Marc",
+    "email": "marc@gmail.com",
+    "password": "password1"
   },
   {
-    "username": "Third User",
-    "email": "thirduser@bootcamp.com",
-    "password": "password12345!"
+    "username": "Kayla",
+    "email": "kayla@gmail.com",
+    "password": "password1"
   }
 ]
