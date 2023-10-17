@@ -1,43 +1,44 @@
-{{> navbar }}
-MY REVIEWS
 
-<div id="myReviews" class="row">
-  <div class="col-md-6">
-    <form id="review-form">
-      <div class="form-group">
-        <label for="title">Review Title</label>
-        <input type="text" name="title" class="form-control" id="review-title" placeholder="">
-      </div>
-      <div class="form-group">
-        <label for="review">Review Body</label>
-        <input type="text" name="review" class="form-control" id="review-body" placeholder="">
-      </div>
-      <div class="form-group">
-        <label for="userId">User ID</label>
-        <input type="text" name="userId" class="form-control" id="review-id" placeholder="">
-      </div>
-      <input class="btn btn-primary" type="submit" />
-    </form>
-  </div>
-  <div class="col-md-6">
-    {{#each myReviews}}
-    <div class="card" style="width: 55rem; height: 15rem">
-      <div class="card-body">
-        <h4 class="card-title">Book Title: {{title}}</h5>
-      </div>
-      <div class="card-body">
-        <h5 class="card-rating">By: {{user.username}}</h5>
-      </div>
-      <div class="card-body">
-        <h5 class="card-review">Stars: *Need to add stars to Model*{{id}}</h5>
-      </div>
-      <div class="card-body">
-        <h5 class="card-review">Review: {{review}}</h5>
-      </div>
+<div class="container container-fluid mt-5">
+  MY REVIEWS
+  <div id="myReviews" class="row">
+    <div class="col-md-6">
+      <form id="review-form">
+        <div class="form-group">
+          <label for="title">Review Title</label>
+          <input type="text" name="title" class="form-control" id="review-title" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="review">Review Body</label>
+          <input type="text" name="review" class="form-control" id="review-body" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="userId">User ID</label>
+          <input type="text" name="userId" class="form-control" id="review-id" placeholder="">
+        </div>
+        <input class="btn btn-primary" type="submit" />
+      </form>
     </div>
-    {{/each}}
-  </div>
+    <div class="col-md-6">
+      {{#each myReviews}}
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h4 class="card-title">Book Title: {{title}}</h5>
+        </div>
+        <div class="card-body">
+          <h5 class="card-rating">By: {{user.username}}</h5>
+        </div>
+        <div class="card-body">
+          <h5 class="card-review">Stars: *Need to add stars to Model*{{id}}</h5>
+        </div>
+        <div class="card-body">
+          <h5 class="card-review">Review: {{review}}</h5>
+        </div>
 
+      </div>
+      {{/each}}
+    </div>
+  </div>
 </div>
 
 <script src="../js/reviews.js"></script>

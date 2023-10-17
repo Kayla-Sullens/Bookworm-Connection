@@ -35,6 +35,8 @@ router.get("/mybooks", withAuth, async (req, res) => {
 
     res.render("myBooks", {
       myBooks: myBooks,
+      user: req.session.user,
+      logged_in: req.session.logged_in,
     });
   } catch (error) {
     res.status(400).json(error);
@@ -62,6 +64,8 @@ router.get("/myreviews", withAuth, async (req, res) => {
     // res.json(myReviews);
     res.render("myReviews", {
       myReviews,
+      user: req.session.user,
+      logged_in: req.session.logged_in,
     });
   } catch (error) {
     res.status(400).json(error);
@@ -83,7 +87,10 @@ router.get("/myrecommendations", withAuth, async (req, res) => {
     console.log("My SUpEr recommendations Array:", myBooks);
 
     res.render("myRecommendations", {
+      user: req.session.user,
+      logged_in: req.session.logged_in,
       myBooks: myBooks,
+      
     });
   } catch (error) {
     res.status(400).json(error);
