@@ -1,4 +1,4 @@
-
+{{!-- section will set up prompt for user input --}}
 <div class="container container-fluid mt-5">
   MY RECOMMENDATIONS
   <div id="myRecommendations" style="display: flex; flex-wrap: wrap;">
@@ -16,6 +16,7 @@
     </form>
 
     {{#each myBooks}}
+    {{!-- this will set the book display for recommendations --}}
     <div class="card" style="width: 18rem;">
       <img src={{book.src}} class="card-img-top" alt="..." style="height: 220px; width: 170px;" />
       <div class="card-body">
