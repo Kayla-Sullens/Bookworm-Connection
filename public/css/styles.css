@@ -39,6 +39,12 @@ nav {
       align-items: center;
       
 }
+.material-icons {
+      font-size: 15px;
+      padding-right: 5px;
+      vertical-align: middle;
+}
+
 #navbar .btn-group:last-child {
       margin-left:auto;
 }
