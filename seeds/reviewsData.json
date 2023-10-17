@@ -2,16 +2,19 @@
     {
         "title": "The best",
         "review": "test",
-        "user_id": 1
+        "user_id": 1,
+        "rating": 5
     },
     {
         "title": "It was ok.",
         "review": "test1",
-        "user_id": 2
+        "user_id": 2,
+        "rating": 5
     },
     {
         "title": "Great Read",
         "review": "test2",
-        "user_id": 3
+        "user_id": 3,
+        "rating": 5
     }
 ]

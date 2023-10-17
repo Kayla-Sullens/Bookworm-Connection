@@ -15,6 +15,9 @@ Reviews.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    rating: {
+      type: DataTypes.INTEGER,
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
