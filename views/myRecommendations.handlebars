@@ -1,20 +1,23 @@
-{{> navbar }}
-MY RECOMMENDATIONS
-<div id="myRecommendations" style="display: flex; flex-wrap: wrap;">
-  <form > 
-    <div class="form-group">
-      <label for="formGroupTitle">Title</label>
-      <input type="text" name="title" class="form-control" id="formGroupTitle" placeholder="Title">
-    </div>
-    <div class="form-group">
-      <label for="formGroupReview">Recommendation</label>
-      <input type="text" name="recommendation" class="form-control" id="formGroupRecommendation" placeholder="recommendation">
-    </div>
-    <input class="btn btn-primary" type="submit" />
-  </form>
 
-  {{#each myBooks}}
+<div class="container container-fluid mt-5">
+  MY RECOMMENDATIONS
+  <div id="myRecommendations" style="display: flex; flex-wrap: wrap;">
+    <form>
+      <div class="form-group">
+        <label for="formGroupTitle">Title</label>
+        <input type="text" name="title" class="form-control" id="formGroupTitle" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <label for="formGroupReview">Recommendation</label>
+        <input type="text" name="recommendation" class="form-control" id="formGroupRecommendation"
+          placeholder="recommendation">
+      </div>
+      <input class="btn btn-primary" type="submit" />
+    </form>
+
+    {{#each myBooks}}
     <div class="card" style="width: 18rem;">
+<<<<<<< HEAD
         <img
         src={{book.src}}
         class="card-img-top"
@@ -22,6 +25,9 @@ MY RECOMMENDATIONS
         style="height: 220px; width: 170px;"
       />
       {{!-- will set format for my recommendation page --}}
+=======
+      <img src={{book.src}} class="card-img-top" alt="..." style="height: 220px; width: 170px;" />
+>>>>>>> 2c818e318633bb78ae403a4ac2b94a5dbd7447b4
       <div class="card-body">
         <h4 class="card-title">Title: {{book.title}}</h5>
       </div>
@@ -29,5 +35,6 @@ MY RECOMMENDATIONS
         <h5 class="card-review">Recommended because has a : {{book.rating}} star rating.</h5>
       </div>
     </div>
-  {{/each}}
+    {{/each}}
+  </div>
 </div>
