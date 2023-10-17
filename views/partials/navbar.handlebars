@@ -2,27 +2,36 @@
   <div class="btn-group">
     <a href="/">
       <button type="button" id="homeBtn" class="btn btn-danger">
-        Home
+        <span class="material-icons">
+          home
+        </span>Home
       </button>
     </a>
   </div>
   <div class="btn-group">
     <a href="/mybooks">
       <button type="button" id="myBooksBtn" class="btn btn-danger">
-        My Books
+        <i class="material-icons">
+          library_books
+        </i>My Books
       </button>
     </a>
   </div>
   <div class="btn-group">
     <a href="/myreviews">
       <button type="button" id="myReviewsBtn" class="btn btn-danger">
-        My Reviews
+        <i class="material-icons">
+          reviews
+        </i>My Reviews
       </button>
     </a>
   </div>
   <div class="btn-group">
     <a href="/myrecommendations">
       <button type="button" id="myRecommendBtn" class="btn btn-danger">
+        <span class="material-icons">
+          favorite_border
+        </span>
         My Recommendations
       </button>
     </a>
@@ -30,13 +39,16 @@
 
   <div class="btn-group">
     {{#if logged_in}}
-    {{! <button class="btn btn-danger" id="logout">Logout</button> }}
-    <a class="btn btn-danger" id="logout">Logout</a>
+      {{! <button class="btn btn-danger" id="logout">Logout</button> }}
+      <a class="btn btn-danger" id="logout"><i class="material-icons">
+          logout
+        </i>Logout</a>
     {{/if}}
   </div>
 </nav>
 
-
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"
+></script>
