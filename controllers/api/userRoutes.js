@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
 
       res.status(200).json(userData);
     });
+
 });
 
 router.post("/login", async (req, res) => {
