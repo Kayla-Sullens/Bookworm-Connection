@@ -1,5 +1,6 @@
 /* NOTES: 
-- in this model, the 'Id', 'date_created', and the 'user_id' are displayed on the table by default.*/
+- in this model, the 'Id', 'date_created', and the 'user_id' are displayed on the table by default.
+*/
 
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
