@@ -29,31 +29,6 @@ UserBooks.init(
         unique: false, // and one book can have multiple users.
       },
     },
-    // THE BELOW PROPERTIES ARE WHAT I WANT ON THIS TABLE, BUT CANNOT FIGURE OUT HOW TO DISPLAY IT IN THE TABLE.
-    // username: {
-    //   type: DataTypes.STRING,
-    //   references: {
-    //     model: "user",
-    //     key: "id",
-    //   },
-    // },
-    // // added for testing:
-    // title: {
-    //   type: DataTypes.STRING,
-    //   references: {
-    //     model: "book",
-    //     key: "id",
-    //   },
-    // },
-    // // added for testing:
-    // src: {
-    //   type: DataTypes.STRING,
-    //   references: {
-    //     model: "book",
-    //     key: "id",
-    //   },
-    // },
-    // might need additional column
   },
   {
     sequelize,
@@ -65,6 +40,3 @@ UserBooks.init(
 );
 
 module.exports = UserBooks;
-
-//  need to combine tables.
-// Join with the book_id refrence we can pull out the other tables info too.
