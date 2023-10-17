@@ -50,6 +50,7 @@ router.get("/myreviews", withAuth, async (req, res) => {
         {
           model: User,
           
+        },
       ],
       order: [["id", "DESC"]],
     });
